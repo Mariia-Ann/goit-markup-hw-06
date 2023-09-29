@@ -26,7 +26,9 @@ a {
 
 img {
   display: block;
-  max-width: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: left;
 }
 
 h1,
@@ -46,9 +48,11 @@ ul {
 }
 
 .container {
-  width: 1158px;
-  margin: 0 auto;
-  padding: 0 15px;
+  max-width: 320px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 16px;
+  padding-right: 16px;
 }
 
 button {
@@ -84,7 +88,8 @@ button {
   line-height: 1.17;
   letter-spacing: 0.03em;
   color: var(--color-brand);
-  padding: 24px 0;
+  padding: 17.5px 0;
+  /* padding: 24px 0; */
   margin-right: 76px;
 }
 .logo {
@@ -143,6 +148,16 @@ button {
 .contacts-item:focus {
   color: var(--color-put);
 }
+
+.button-menu-toggle {
+  min-height: 24px;
+  min-width: 24px;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
 /* End Header */
 
 /* Hero Section */
@@ -154,11 +169,12 @@ button {
   gap: 48px;
   flex-direction: column;
   align-items: center;
-  max-width: 1440px;
+  max-width: 320px;
+  /* max-width: 1440px; */
   margin: 0 auto;
 
   background-image: linear-gradient(var(--color-tr-bg), var(--color-tr-bg)),
-    url(../images/people-office.jpg);
+    url(../images/hero/bg_mob.jpg);
 
   background-position: center;
   background-repeat: no-repeat;
@@ -205,7 +221,7 @@ button {
 /* Advantages Section */
 
 .advantages-section {
-  padding: 120px 0;
+  padding: 96px 0;
 }
 .visually-hidden {
   position: absolute;
@@ -222,28 +238,14 @@ button {
 }
 .advantages-list {
   display: flex;
-  gap: 24px;
-}
-.advantages-item {
-  width: calc((100% - 72px) / 4);
-}
-
-.advantages-icon {
-  background-color: var(--color-cloud);
-  border: 1px solid var(--color-light-slate);
-  padding: 24px 100px;
-  margin-bottom: 8px;
-  height: 112px;
-  border-radius: 4px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  flex-wrap: wrap;
+  gap: 72px;
 }
 
 .advantages-subtitle {
-  font-size: 20px;
-  line-height: 1.2;
-  font-weight: 500;
+  font-size: 36px;
+  line-height: 1.11;
+  font-weight: 700;
   letter-spacing: 0.02em;
   color: var(--color-primary);
   margin-bottom: 8px;
@@ -258,7 +260,7 @@ button {
 /* Team Section */
 .team-section {
   background-color: var(--color-cloud);
-  padding: 120px 0;
+  padding: 96px 0;
 }
 .team-title {
   font-size: 36px;
@@ -283,7 +285,9 @@ button {
 }
 .team-list {
   display: flex;
-  gap: 24px;
+  flex-wrap: wrap;
+  gap: 72px;
+  justify-content: center;
 }
 .team-item {
   font-size: 20px;
@@ -329,7 +333,7 @@ button {
 /* Portfolio Section */
 
 .portfolio-section {
-  padding: 120px 0;
+  padding: 96px 0;
 }
 .portfolio-title {
   font-size: 36px;
@@ -345,12 +349,10 @@ button {
 .portfolio-list {
   display: flex;
   flex-wrap: wrap;
-  gap: 24px;
-  row-gap: 48px;
+  gap: 48px;
 }
 
 .portfolio-item {
-  width: calc((100% - 48px) / 3);
   transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -408,16 +410,14 @@ button {
 .footer {
   background-color: var(--color-primary);
   color: var(--color-cloud);
-  padding: 100px 0;
+  padding: 96px 0;
 }
 
 .footer-list {
   display: flex;
   align-items: baseline;
-}
-
-.footer-item {
-  margin-right: 120px;
+  gap: 72px;
+  flex-wrap: wrap;
 }
 
 .footer-logo {
@@ -441,7 +441,7 @@ button {
   max-width: 264px;
 }
 .social-block {
-  margin-right: 80px;
+  /* margin-right: 80px; */
 }
 .social-title {
   font-weight: 500;
@@ -492,16 +492,18 @@ button {
 .subscripe-form {
   display: flex;
   gap: 24px;
+  flex-wrap: wrap;
 }
 
 .subscribe-email {
   display: flex;
-  flex-direction: column;
+  /* flex-direction: column; */
   gap: 16px;
 }
 
 .subscripe-input {
-  width: 264px;
+  /* width: 264px; */
+  width: 288px;
   height: 40px;
   font-size: 12px;
   line-height: 1.5;
@@ -519,6 +521,7 @@ button {
 }
 
 .subscribe-button {
+  margin: 0 auto;
   min-width: 165px;
   height: 40px;
   display: flex;
@@ -559,15 +562,15 @@ button {
   transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
     visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
-  opacity: 0;
-  visibility: hidden;
-  pointer-events: none;
-}
-
-.backdrop.is-open {
   opacity: 1;
   visibility: visible;
   pointer-events: auto;
+}
+
+.backdrop.is-hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
 }
 
 .modal {
@@ -578,8 +581,8 @@ button {
   width: 408px;
   min-height: 584px;
   background-color: var(--color-modal-bg);
-  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14),
-    0px 1px 3px rgba(0, 0, 0, 0.12), 0px 2px 1px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
   padding: 72px 24px 24px 24px;
@@ -759,3 +762,80 @@ button {
   background-color: var(--color-put);
 }
 /* End Modal */
+
+.menu-container {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: var(--color-white);
+  padding: 72px 16px 40px;
+
+  display: flex;
+  flex-direction: column;
+  transform: translateX(100%);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+}
+.menu-container.is-open {
+  transform: translateX(0);
+}
+
+.mobile-header-list {
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 1.11;
+  letter-spacing: 0.02em;
+  margin-bottom: auto;
+}
+.mobile-header-item:not(:last-child) {
+  margin-bottom: 40px;
+}
+.mobile-header-link.current {
+  color: var(--color-brand);
+}
+
+.mobile-contacts {
+font-size: 20px;
+font-weight: 500;
+line-height: 1.2;
+letter-spacing: 0.02em;
+margin-bottom: 48px;
+}
+
+.mobile-contacts-item:not(:last-child) {
+  margin-bottom: 24px;
+}
+.mobile-contacts-link.accent {
+  color: var(--color-brand);
+}
+
+.mobile-icon-social {
+  display: flex;
+  gap: 40px;
+  justify-content: center;
+}
+.mobile-social-list {
+  width: 40px;
+  height: 40px;
+}
+.mobile-social-item {
+  background-color: var(--color-brand);
+  padding: 8px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.mobile-social-image {
+  fill: var(--color-cloud);
+}
+.mobile-social-item:hover,
+.mobile-social-item:focus {
+  background-color: var(--color-footer);
+}
