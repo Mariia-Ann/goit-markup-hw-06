@@ -48,7 +48,7 @@ ul {
 }
 
 .container {
-  max-width: 320px;
+  width: 320px;
   margin-left: auto;
   margin-right: auto;
   padding-left: 16px;
@@ -135,6 +135,8 @@ button {
   display: flex;
   gap: 40px;
 }
+
+
 .contacts-item {
   font-style: normal;
   line-height: 1.5;
@@ -164,13 +166,12 @@ button {
 .hero-section {
   background-color: var(--color-primary);
   color: var(--color-white);
-  padding: 188px 0;
+  padding: 72px 0;
   display: flex;
   gap: 48px;
   flex-direction: column;
   align-items: center;
   max-width: 320px;
-  /* max-width: 1440px; */
   margin: 0 auto;
 
   background-image: linear-gradient(var(--color-tr-bg), var(--color-tr-bg)),
@@ -182,9 +183,9 @@ button {
 }
 
 .hero-title {
-  font-size: 56px;
+  font-size: 36px;
+  line-height: 1.11;
   font-weight: 700;
-  line-height: 1.07;
   letter-spacing: 0.02em;
   text-align: center;
   display: flex;
@@ -776,7 +777,6 @@ button {
   flex-direction: column;
   transform: translateX(100%);
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
-
 }
 .menu-container.is-open {
   transform: translateX(0);
@@ -797,11 +797,11 @@ button {
 }
 
 .mobile-contacts {
-font-size: 20px;
-font-weight: 500;
-line-height: 1.2;
-letter-spacing: 0.02em;
-margin-bottom: 48px;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: 0.02em;
+  margin-bottom: 48px;
 }
 
 .mobile-contacts-item:not(:last-child) {
@@ -814,7 +814,6 @@ margin-bottom: 48px;
 .mobile-icon-social {
   display: flex;
   gap: 40px;
-  justify-content: center;
 }
 .mobile-social-list {
   width: 40px;
